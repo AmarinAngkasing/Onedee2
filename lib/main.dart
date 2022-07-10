@@ -5,6 +5,7 @@ import 'package:onedee/states/edit_profile.dart';
 import 'package:onedee/states/list_document.dart';
 import 'package:onedee/states/my_service.dart';
 import 'package:onedee/states/pdf_view.dart';
+import 'package:onedee/utility/my_constant.dart';
 
 final Map<String, WidgetBuilder> map = {
   '/authen': (BuildContext context) => Authen(),
@@ -16,10 +17,15 @@ final Map<String, WidgetBuilder> map = {
 };
 
 String initialRount = '/authen';
+main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    return MaterialApp(
+      title: MyConstant().appName,
+      routes: map,
+      initialRoute: initialRount,
+    );
   }
 }
